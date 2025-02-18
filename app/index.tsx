@@ -1,24 +1,13 @@
-import { View, Text } from 'react-native';
-import React from 'react';
-import { globalStyles } from '@/styles/global-styles';
-import TemperatureButton from '@/components/TemperatureButton';
-import { useTemperature } from '@/hooks/useTemperature';
+import App1 from '@/components/App1'
+import App2 from '@/components/App2'
+import React from 'react'
 
-const TemperatureControl = () => {
-  const { temperature, increaseTemperature, decreaseTemperature, getTemperatureColor } = useTemperature();
-
+export default function index() {
   return (
-    <View style={globalStyles.container}>
-      <Text style={[globalStyles.temperatureText, { color: getTemperatureColor() }]}>
-        {temperature}°C
-      </Text>
+    // Selector de temperaturas
+    <App1/>
 
-      <View style={globalStyles.row}>
-        <TemperatureButton label="-" onPress={decreaseTemperature} />
-        <TemperatureButton label="+" onPress={increaseTemperature} />
-      </View>
-    </View>
-  );
-};
-
-export default TemperatureControl;
+    // Generador de colores aleatorios
+    // <App2/>
+  )
+}
